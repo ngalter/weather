@@ -1,8 +1,4 @@
-h2 {
-    color: #1451b8;
-    font-size: 2em;
-    font-weight: 500;
-}
+
 .select-box {
     background-color: whitesmoke;
     max-width: 300px;
@@ -53,14 +49,7 @@ body {
 .top_space {
     color: transparent;
     margin-top: 5em;
-}
-
-.fixed-bottom {
-    color: white;
-    padding: 1em 0em;
-    opacity: .97;
-}
-   
+}   
    /* change the brand and text color */
    .navbar-custom .navbar-brand,
    .navbar-custom .navbar-text {
