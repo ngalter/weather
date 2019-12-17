@@ -13,7 +13,7 @@
 <body>
         <nav class="navbar navbar-dark fixed-top bg-primary navbar-custom navbar-expand-lg mb-4">
                 <div class="container">
-                  <span class="navbar-brand navbar-custom" >Weather App</span>
+                  <span class="navbar-brand navbar-custom" >Weather Dashboard</span>
                 </div><!-- container -->
         </nav>
      <div class= "col d-flex">
@@ -28,10 +28,28 @@
                 <div class="row mb-4 d-flex" style="background-color: white; border-radius: 3px; border: solid 1px gainsboro;">
                         <div class="col-lg-4 select-box mt-4 select-box mb-4">
                               <h5>Search for a City:</h5>
+                              <form id="city-form">
+                                <input type="text" id="city-input">
+                                <button class="bg-primary text-white" ><i class="fas fa-search"></i></button>
+                          
+                                <!-- Button triggers new movie to be added -->
+
+                              </form>
                         </div>
                         <div class="col-lg-8 mt-4 mb-4">
-                                <div class="row d-flex today-weather">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis id maiores modi non, aspernatur, accusamus distinctio sunt eos sapiente enim ea molestias eum ullam esse mollitia deleniti! Quam, earum voluptas!</p>
+                                <div class="row d-flex today-weather" id="today">
+                                        <div class="col-lg-8">
+                                                <h3 id="cityid"></h3>
+                                        </div>
+                                        <div class="col-lg-8">
+                                                <h6 id="windid"></h6>
+                                        </div>
+                                        <div class="col-lg-8">
+                                                <h6 id="humidid"></h6>
+                                        </div>
+                                        <div class="col-lg-8">
+                                                <h6 id="tempid"></h6>
+                                        </div>
                                 </div>
                                 <div class="row d-flex mt-4 justify-content-left">
                                         <h4>
