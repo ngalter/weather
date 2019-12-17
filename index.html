@@ -13,7 +13,9 @@
 <body>
         <nav class="navbar navbar-dark fixed-top bg-primary navbar-custom navbar-expand-lg mb-4">
                 <div class="container">
-                  <span class="navbar-brand navbar-custom" >Weather Dashboard</span>
+                <div class="col justify-content-center">
+                  <span class="navbar-brand navbar-custom" id="dash">Weather Dashboard</span>
+                </div>
                 </div><!-- container -->
         </nav>
      <div class= "col d-flex">
@@ -38,8 +40,11 @@
                         </div>
                         <div class="col-lg-8 mt-4 mb-4">
                                 <div class="row d-flex today-weather" id="today">
-                                        <div class="col-lg-8">
-                                                <h3 id="cityid"></h3>
+                                        <div class="col-lg-1 justify-content-left">
+                                                <img id="today-iconid" class="todayIcon"></img>        
+                                        </div>
+                                        <div class="col-lg-7 justify-content-left">
+                                                <h4 id="cityid"></h4> 
                                         </div>
                                         <div class="col-lg-8">
                                                 <h6 id="windid"></h6>
@@ -50,27 +55,34 @@
                                         <div class="col-lg-8">
                                                 <h6 id="tempid"></h6>
                                         </div>
+                                        <div class="col-lg-8">
+                                                <h6 id="uvid"></h6>
+                                        </div>
                                 </div>
                                 <div class="row d-flex mt-4 justify-content-left">
                                         <h4>
-                                                5-Day Forcast
+                                                5-Day Forcast:
                                         </h4>
                                 </div> 
                                 <div class="row d-flex justify-content-between"> 
-                                        <div class="col-s-2 bg-primary five-day">
-                                                Lorem ipsum dolor sit amet.
+                                        <div class="col-s-2 bg-primary five-day" id="fcast1">
+                                              <div class="row">
+                                                      <div class="col" id="fIcon1">
+
+                                                      </div>
+                                              </div>  
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
-                                                Lorem ipsum dolor sit amet.
+                                        <div class="col-s-2 bg-primary five-day" id="fcast2">
+                                                
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
-                                                Lorem ipsum dolor sit amet.
+                                        <div class="col-s-2 bg-primary five-day" id="fcast3">
+                                                
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
-                                                Lorem ipsum dolor sit amet.
+                                        <div class="col-s-2 bg-primary five-day" id="fcast4">
+                                                
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
-                                                Lorem ipsum dolor sit amet.
+                                        <div class="col-s-2 bg-primary five-day" id="fcast5">
+                                                
                                         </div>
                                 </div>
                         </div>
@@ -81,6 +93,8 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/moment" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
