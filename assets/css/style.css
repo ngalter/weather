@@ -67,6 +67,17 @@ body {
    .todayIcon {
        margin-top: -10px;
        margin-left: -10px;
-       width: 200%;
+       width: 300%;
        float: left;
+   }
+   .fcastIcon {
+    width: 70px;
+    height: 70px;
+    margin-top: -10px;
+    margin-left: -10px;
+   }
+   .myImg {
+       width: 70px;
+       height: 70px;
+       margin-top: -20px;
    }

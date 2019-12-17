@@ -28,7 +28,7 @@ $(document).ready(function () {
                 var dateTmp = response.list[i].dt_txt;
                 var dateFmt = getDate(dateTmp);
                 var dateInt = parseInt(dateFmt);
-                var icn = response.list[i].weather.icon;
+                var icn = response.list[i].weather[0].icon;
                 console.log(icn + " ICN");
                 console.log(dateInt + " : " + todayDt);
                 console.log(todayDt + " TODAY");
@@ -39,24 +39,31 @@ $(document).ready(function () {
                     console.log("1 day");
                     $("#fcast1").html(formatDate(dateTmp));
                     var imgUrl = "http://openweathermap.org/img/wn/" + icn + "@2x.png";
-                    console.log(imgUrl);
                     $("#fIcon1").attr("src", imgUrl);
                 }
                 if (dateInt - parseInt(todayDt) === 2) {
                     console.log("2 days");
                     $("#fcast2").html(formatDate(dateTmp));
+                    var imgUrl = "http://openweathermap.org/img/wn/" + icn + "@2x.png";
+                    $("#fIcon2").attr("src", imgUrl);
                 }
                 if (dateInt - parseInt(todayDt) === 3) {
                     console.log("3 days");
                     $("#fcast3").html(formatDate(dateTmp));
+                    var imgUrl = "http://openweathermap.org/img/wn/" + icn + "@2x.png";
+                    $("#fIcon3").attr("src", imgUrl);
                 }
                 if (dateInt - parseInt(todayDt) === 4) {
                     console.log("4 days");
                     $("#fcast4").html(formatDate(dateTmp));
+                    var imgUrl = "http://openweathermap.org/img/wn/" + icn + "@2x.png";
+                    $("#fIcon4").attr("src", imgUrl);
                 }
                 if (dateInt - parseInt(todayDt) === 5) {
                     console.log("5 days");
                     $("#fcast5").html(formatDate(dateTmp));
+                    var imgUrl = "http://openweathermap.org/img/wn/" + icn + "@2x.png";
+                    $("#fIcon5").attr("src", imgUrl);
                 }
             }
         })
