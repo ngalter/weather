@@ -41,19 +41,19 @@
                         <div class="col-lg-8 mt-4 mb-4">
                                 <div class="row d-flex today-weather" id="today">
                                         <div class="col-lg-1 justify-content-left">
-                                                <img id="today-iconid" class="todayIcon"></img>        
+                                                <img id="today-iconid" style="clear:both;" class="todayIcon" ></img>        
                                         </div>
-                                        <div class="col-lg-7 justify-content-left">
-                                                <h4 id="cityid"></h4> 
+                                        <div class="col-lg-7 city-head">
+                                                <h3 id="cityid"></h3> 
                                         </div>
                                         <div class="col-lg-8">
-                                                <h6 id="windid"></h6>
+                                                <h6 id="tempid"></h6>
                                         </div>
                                         <div class="col-lg-8">
                                                 <h6 id="humidid"></h6>
                                         </div>
                                         <div class="col-lg-8">
-                                                <h6 id="tempid"></h6>
+                                                <h6 id="windid"></h6>
                                         </div>
                                         <div class="col-lg-8">
                                                 <h6 id="uvid"></h6>
@@ -66,44 +66,74 @@
                                 </div> 
                                 <div class="row d-flex justify-content-between"> 
                                         <div class="col-s-2 bg-primary five-day">
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <h6 id="fcast1"></h6>
+                                                <div class="col justify-content-center">
+                                                        <h6 id="fcast1" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <img id="fIcon1" class="myImg"></img>
+                                                <div class="col justify-content-center">
+                                                        <img id="fIcon1" class="myImg" style="clear:both;"></img>
+                                                </div>  
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="t1" style="clear:both;"></p>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="h1" style="clear:both;"></p>
                                                 </div>  
                                         </div>
                                         <div class="col-s-2 bg-primary five-day">
-                                                <div class="col-lg-2 justify-content-center">
-                                                      <h6 id="fcast2"></h6>
+                                                <div class="col justify-content-center">
+                                                      <h6 id="fcast2" style="clear:both;" class="fcastdate"></h6>
                                               </div>
-                                              <div class="col-lg-2 justify-content-center">
-                                                      <img id="fIcon2" class="myImg"></img>
-                                              </div>    
+                                              <div class="col justify-content-center">
+                                                      <img id="fIcon2" class="myImg" style="clear:both;"></img>
+                                              </div>
+                                              <div class="col w-data justify-content-center">
+                                                        <p id="t2" style="clear:both;"></p>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="h2" style="clear:both;"></p>
+                                                </div>      
                                         </div>
                                         <div class="col-s-2 bg-primary five-day">
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <h6 id="fcast3"></h6>
+                                                <div class="col justify-content-center">
+                                                        <h6 id="fcast3" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <img id="fIcon3" class="myImg"></img>
-                                                </div>                                                 
+                                                <div class="col justify-content-center">
+                                                        <img id="fIcon3" class="myImg" style="clear:both;"></img>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="t3" style="clear:both;"></p>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="h3" style="clear:both;"></p>
+                                                </div>                                                  
                                         </div>
                                         <div class="col-s-2 bg-primary five-day">
-                                                 <div class="col-lg-2 justify-content-center">
-                                                        <h6 id="fcast4"></h6>
+                                                 <div class="col justify-content-center">
+                                                        <h6 id="fcast4" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
-                                                <div class="col-lg-2 justify-content-center">
+                                                <div class="col justify-content-center">
                                                         <img id="fIcon4" class="myImg"></img>
-                                                </div>       
+                                                </div>
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="t4" style="clear:both;"></p>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="h4" style="clear:both;"></p>
+                                                </div>         
                                         </div>
                                         <div class="col-s-2 bg-primary five-day">
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <h6 id="fcast5"></h6>
+                                                <div class="col justify-content-center">
+                                                        <h6 id="fcast5" class="fcastdate" style="clear:both;"></h6>
                                                 </div>
-                                                <div class="col-lg-2 justify-content-center">
-                                                        <img id="fIcon5" class="myImg"></img>
-                                                </div>         
+                                                <div class="col justify-content-center">
+                                                        <img id="fIcon5" class="myImg" style="clear:both;"></img>
+                                                </div>
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="t5" style="clear:both;"></p>
+                                                </div> 
+                                                <div class="col w-data justify-content-center">
+                                                        <p id="h5" style="clear:both;"></p>
+                                                </div>           
                                         </div>
                                 </div>
                         </div>

@@ -1,7 +1,7 @@
 
 .select-box {
     background-color: whitesmoke;
-    max-width: 300px;
+    max-width: 250px;
     height: 400px;
     padding: 10px;
     margin: 10px 20px 10px 20px;
@@ -21,15 +21,17 @@
 .five-day {
     color: white;
     width: 130px;
-    height: 150px;
-    padding: 10px;
-    text-align: left;
+    height: 160px;
+    text-align: center;
     border-radius: 5px;
 }
 
+.fcastdate {
+    margin-top: 10px;
+}
 
 .container {
-    /*max-width: 1024px;*/
+    width: 1200px;
 }
 
 body {
@@ -46,7 +48,10 @@ body {
     color: white;
     text-align: center;
 } 
-
+.city-head {
+    margin-left: 10px;
+    margin-top: 10px;
+}
 .top_space {
     color: transparent;
     margin-top: 5em;
@@ -65,10 +70,11 @@ body {
         padding: .2em .5em;
    }
    .todayIcon {
-       margin-top: -10px;
-       margin-left: -10px;
-       width: 300%;
-       float: left;
+       width: 60px;
+       height: 60px;
+       background-color: lightsteelblue;
+       margin-right: 20px;
+       border-radius: 5px;
    }
    .fcastIcon {
     width: 70px;
@@ -79,5 +85,10 @@ body {
    .myImg {
        width: 70px;
        height: 70px;
-       margin-top: -20px;
+       margin-top: -10px;
+   }
+   .w-data {
+        padding: .2em 0em .2em 0em;
+        margin-bottom: -15px;
+        font-size: .9em;
    }
