@@ -190,9 +190,8 @@ function getWeather() {
             method: "GET"
         }).then(function (response) {
             console.log("UV: " + response.value);
-           // var uv = response.value;
-            var uv = "10.2";
-            uvColor(uv);
+           var uv = response.value;
+           uvColor(uv);
         });
 
 
