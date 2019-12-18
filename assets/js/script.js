@@ -102,14 +102,42 @@ $(document).ready(function () {
 
     }
     
-    function getDate(str)
-    {
+    function getDate(str) {
         console.log(str);
         var dt = str.slice(8, 10);
         console.log(dt);
         return dt;
     }
 
+    function uvColor(uv) {
+        var numUV = uv * 1;
+
+        console.log("Color Function" + numUV);
+        if (numUV >= 0 && numUV <= 2)
+        {
+            $(".badge").css("background-color","green");
+        }
+        else if (numUV > 2 && numUV <= 5)
+        {
+            $(".badge").css("background-color","yellow");
+        }
+        else if (numUV > 5 && numUV <= 7)
+        {
+            $(".badge").css("background-color","orange");
+            console.log("in if orange");
+        }
+        else if (numUV > 7 && numUV <= 10)
+        {
+            $(".badge").css("background-color","red");
+        }
+        else if (numUV >10)
+        {
+            $(".badge").css("background-color","purple");
+        }
+        uv = numUV.toString();
+        $("#uvid").html(uv);
+    }
+    
 function getWeather() {
 
     // Here we are building the URL we need to query the database
@@ -162,8 +190,9 @@ function getWeather() {
             method: "GET"
         }).then(function (response) {
             console.log("UV: " + response.value);
-            var uv = response.value;
-            $("#uvid").html("UV Index: " + uv);
+           // var uv = response.value;
+            var uv = "10.2";
+            uvColor(uv);
         });
 
 

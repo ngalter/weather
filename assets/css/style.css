@@ -69,6 +69,30 @@ body {
         border-radius: 5px;
         padding: .2em .5em;
    }
+   .green{
+       background-color: green;
+   }
+   .yellow{
+    background-color: yellow;
+    }
+    .orange{
+        background-color: orange;
+    }
+    .red{
+        background-color: red;
+    }
+    .purple{
+        background-color: purple;
+    }
+   .badge {
+        float: left;
+        margin-top: -5px;
+        margin-left: -5px;
+        padding: .5em .75em;
+        font-size: .8em;
+        color: white;
+        background-color: green;
+   }
    .todayIcon {
        width: 60px;
        height: 60px;
