@@ -11,7 +11,7 @@ $(document).ready(function () {
     
 
 
-    $("#search").on("click", function(event) {
+    $("#search").on("click", function (event) {
         event.preventDefault();
         city = $("#city-input").val().trim();
         cityList.push(city);
@@ -20,7 +20,12 @@ $(document).ready(function () {
     });
 
     $("#cityBox").on("click", function (event) {
-        alert(event.target.node);
+        var str = event.target.id;
+        var int = parseInt(str);
+        console.log(str);
+        var str = cityList[int];
+        console.log(str);
+        $("#city-input").val(str);
     });
 
     function updateList() {
@@ -28,16 +33,13 @@ $(document).ready(function () {
         for (var i = 0; i < cityList.length; i++)
         {
             var newItem = cityList[i];
-            var newP = $("<p>").text(newItem).addClass("city-item").attr("id", i.toString());
+             var newP = $("<p>").text(newItem).addClass("city-item").attr("id", i.toString());
             $("#cityBox").append(newP);
         }
-
-
-
-     //   $("<option>") = newItem;
-       // $("#selectbox").prepend($("<option>"));
-      //  console.log(newItem);
     }
+
+
+
 
     /*function saveData() {
         if (typeof (Storage) !== "undefined") {
