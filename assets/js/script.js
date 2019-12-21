@@ -14,7 +14,16 @@ $(document).ready(function () {
     $("#search").on("click", function (event) {
         event.preventDefault();
         city = $("#city-input").val().trim();
-        cityList.push(city);
+        if ($.inArray(city,cityList))
+        {
+            console.log("in array") 
+            cityList.push(city);
+        }else
+        {
+            cityList.push(city);
+            console.log("in array") 
+        }
+            
         updateList();
         doGroup();
     });
