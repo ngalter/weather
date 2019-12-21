@@ -45,6 +45,7 @@
     color: #666666;
     width: 220px;
     padding: .25em .25em;
+    margin: 0px;
 }
 
 .city-item:hover {

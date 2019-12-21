@@ -11,7 +11,7 @@ $(document).ready(function () {
     
 
 
-    $("#search").on("click", function () {
+    $("#search").on("click", function(event) {
         event.preventDefault();
         city = $("#city-input").val().trim();
         cityList.push(city);
@@ -19,29 +19,21 @@ $(document).ready(function () {
         doGroup();
     });
 
-    $(".city-item").on("click", function () {
-        str = $(this).text;
-        alert(str)
-    })
-
-   // $("#myOption").on("click", function () 
-   /* {   
-        var mySelected = $(this).value;
-        alert(mySelected);
-        $("#city-input").text(mySelected);
-        updateList();
-        doGroup();
-    });*/
+    $("#cityBox").on("click", function (event) {
+        alert(event.target.node);
+    });
 
     function updateList() {
         $("#cityBox").empty();
         for (var i = 0; i < cityList.length; i++)
         {
             var newItem = cityList[i];
-            var newDiv = $("<div>").text(newItem).addClass("city-item").attr("id", i);
-            $("#cityBox").append(newDiv);
+            var newP = $("<p>").text(newItem).addClass("city-item").attr("id", i.toString());
+            $("#cityBox").append(newP);
         }
-        
+
+
+
      //   $("<option>") = newItem;
        // $("#selectbox").prepend($("<option>"));
       //  console.log(newItem);
