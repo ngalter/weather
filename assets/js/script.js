@@ -1,25 +1,101 @@
 $(document).ready(function () {
     console.log("ready!");
 
-
     var APIKey = "78eba90150637413f3c5739718713dea";
     var calendarDate = "";
     var todayDt = "";
     var latNo = "";
     var lonNo = "";
-    var pastSearch = [];
+    var city = $("#city-input").val().trim();
+    var cityList = ["Philadelphia"];
+    
+
+
+    $("#search").on("click", function () {
+        event.preventDefault();
+        city = $("#city-input").val().trim();
+        cityList.push(city);
+        updateList();
+        doGroup();
+    });
+
+    $(".city-item").on("click", function () {
+        str = $(this).text;
+        alert(str)
+    })
+
+   // $("#myOption").on("click", function () 
+   /* {   
+        var mySelected = $(this).value;
+        alert(mySelected);
+        $("#city-input").text(mySelected);
+        updateList();
+        doGroup();
+    });*/
+
+    function updateList() {
+        $("#cityBox").empty();
+        for (var i = 0; i < cityList.length; i++)
+        {
+            var newItem = cityList[i];
+            var newDiv = $("<div>").text(newItem).addClass("city-item").attr("id", i);
+            $("#cityBox").append(newDiv);
+        }
+        
+     //   $("<option>") = newItem;
+       // $("#selectbox").prepend($("<option>"));
+      //  console.log(newItem);
+    }
+
+    /*function saveData() {
+        if (typeof (Storage) !== "undefined") {
+
+            $("<listbox>").each(function () {
+                localStorage.setItem(i, "<listbox>".val);
+                console.log("<listbox>".val);
+                //localStorage.setItem(i,value);
+        
+
+            } else {
+                    // Sorry! No Web Storage support..
+                });
+        };
+        
+       function getData() {
+            if (typeof (Storage) !== "undefined") {
+                // Code for localStorage/sessionStorage.
+                var userInput = "";
+            
+                for (var i = 0; i < 9; i++) {
+                    dateKey = today + indexHour(i);
+                    userInput = localStorage.getItem(dateKey);
+                    document.getElementById(indexHour(i)).value = userInput;
+                }
+            } else {
+                // Sorry! No Web Storage support..
+            }
+       }/*/
+
+
+
+    //doGroup();
+    function doGroup() {
+        getToday();
+        getWeather();
+        getForecast();
+    }
+
     function getToday() {
         calendarDate = moment().format("dddd, MMMM Do, YYYY");
         todayDt = moment().format("DD");
-        console.log(todayDt + " THis is today dt");
-        var dashText = "Weather Dashboard: " + "&nbsp&nbsp" + calendarDate;
+        console.log(todayDt + " This is today dt");
+        var dashText = "Weather Dashboard";
         $("#dash").html(dashText);
     }
 
     function getForecast() {
-        var city = "Philadelphia";
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
-        console.log(queryURL);
+        console.log(city);
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -36,11 +112,6 @@ $(document).ready(function () {
                 var rdftemp = Math.round(ftemp);
                 var humid = response.list[i].main.humidity;
 
-
-
-                console.log(icn + " ICN");
-                console.log(dateInt + " : " + todayDt);
-                console.log(todayDt + " TODAY");
                 if (dateInt - parseInt(todayDt) === 0) {
                     console.log("equals");
                 }
@@ -113,92 +184,65 @@ $(document).ready(function () {
         var numUV = uv * 1;
 
         console.log("Color Function" + numUV);
-        if (numUV >= 0 && numUV <= 2)
-        {
-            $(".badge").css("background-color","green");
+        if (numUV >= 0 && numUV <= 2) {
+            $(".badge").css("background-color", "green");
         }
-        else if (numUV > 2 && numUV <= 5)
-        {
-            $(".badge").css("background-color","yellow");
+        else if (numUV > 2 && numUV <= 5) {
+            $(".badge").css("background-color", "#e7e706");
         }
-        else if (numUV > 5 && numUV <= 7)
-        {
-            $(".badge").css("background-color","orange");
+        else if (numUV > 5 && numUV <= 7) {
+            $(".badge").css("background-color", "orange");
             console.log("in if orange");
         }
-        else if (numUV > 7 && numUV <= 10)
-        {
-            $(".badge").css("background-color","red");
+        else if (numUV > 7 && numUV <= 10) {
+            $(".badge").css("background-color", "red");
         }
-        else if (numUV >10)
-        {
-            $(".badge").css("background-color","purple");
+        else if (numUV > 10) {
+            $(".badge").css("background-color", "purple");
         }
         uv = numUV.toString();
         $("#uvid").html(uv);
     }
     
-function getWeather() {
-
-    // Here we are building the URL we need to query the database
-    var city = "Philadelphia";
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-
-    // We then created an AJAX call
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-
-        // Create CODE H"ERE to Log the queryURL
-        console.log(queryURL);
-        // Create CODE HERE to log the resulting object
-        console.log(response);
-        // Create CODE HERE to transfer content to HTML
-        //icon url
-
-                // Retrieving the URL for the image
-        var iconId = response.weather[0].icon;
-        console.log(iconId);
-
-                // Creating an element to hold the image
-
-        $("#cityid").html(response.name);
-        latNo = response.coord.lat;
-        lonNo = response.coord.lon;
-        console.log("LAT "+latNo);
-        console.log("LON " + lonNo);
-
-        var imgUrl = "http://openweathermap.org/img/wn/" + iconId + "@2x.png";
-        $("#today-iconid").attr("src", imgUrl);
-        $("#windid").html("Wind Speed: " + response.wind.speed.toString() + " mph");
-        $("#humidid").html("Humidity: " + response.main.humidity + " %");
-        console.log(response.main.temp);
-        var ktemp = parseInt(response.main.temp);
-        console.log(response.main.temp);
-        var ftemp = (ktemp - 273.15) * 1.8 + 32;
-        var rdftemp = Math.round(ftemp);
-        console.log(ktemp);
-        console.log(rdftemp);
-        $("#tempid").text("Temperature: " + rdftemp.toString() + "℉")
-
-        //get uv
-        var queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + latNo + "&lon=" + lonNo;
-        console.log(queryURL);
+    function getWeather() {
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
         $.ajax({
             url: queryURL,
             method: "GET"
-        }).then(function (response) {
-            console.log("UV: " + response.value);
-           var uv = response.value;
-           uvColor(uv);
-        });
+        }).then( function (response) {
 
+                var iconId = response.weather[0].icon;
+                $("#cityid").html(response.name);
+                $("#caldate").html(calendarDate);
+                latNo = response.coord.lat;
+                lonNo = response.coord.lon;
 
-        })          
-    };
+                var imgUrl = "http://openweathermap.org/img/wn/" + iconId + "@2x.png";
+                $("#today-iconid").attr("src", imgUrl);
+                $("#windid").html("Wind Speed: " + response.wind.speed.toString() + " mph");
+                $("#humidid").html("Humidity: " + response.main.humidity + " %");
+                console.log(response.main.temp);
+                var ktemp = parseInt(response.main.temp);
+                console.log(response.main.temp);
+                var ftemp = (ktemp - 273.15) * 1.8 + 32;
+                var rdftemp = Math.round(ftemp);
+                console.log(ktemp);
+                console.log(rdftemp);
+                $("#tempid").text("Temperature: " + rdftemp.toString() + "℉")
 
-    getToday();
-    getWeather();
-    getForecast();
-});
+                //get uv
+                var queryURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + latNo + "&lon=" + lonNo;
+                console.log(queryURL);
+                $.ajax({
+                    url: queryURL,
+                    method: "GET"
+                }).then(function (response) {
+                    console.log("UV: " + response.value);
+                    var uv = response.value;
+                    uvColor(uv);
+                });
+            
+        })
+        };
+
+    });
