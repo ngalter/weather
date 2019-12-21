@@ -20,7 +20,7 @@ $(document).ready(function () {
             cityList.push(city);
         }else
         {
-            cityList.push(city);
+           // cityList.push(city);
             console.log("in array") 
         }
             
