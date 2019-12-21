@@ -14,28 +14,43 @@ $(document).ready(function () {
     $("#search").on("click", function (event) {
         event.preventDefault();
         city = $("#city-input").val().trim();
-        if ($.inArray(city,cityList))
+        var index = cityList.indexOf(city);
+        console.log(`INDEX OF ${city} is ${index}`);
+            // $.inArray(city, cityList)
+        if (index === -1)
         {
-            console.log("in array") 
+            // console.log("in array") 
             cityList.push(city);
         }else
         {
            // cityList.push(city);
-            console.log("in array") 
+            // console.log("in array") 
         }
             
         updateList();
         doGroup();
     });
 
-    $("#cityBox").on("click", function (event) {
-        var str = event.target.id;
+    // $("#cityBox").on("click", function (event) {
+    //     // var str = event.target.id;
+    //     // console.log("GRABBING TEXT ", event.target.innerText);
+    //     // var int = parseInt(str);
+    //     // // console.log(str);
+    //     // var str = cityList[int];
+    //     // // console.log(str);
+    //     // $("#city-input").val(str);
+    // });
+
+    $(document).on("click", ".city-item", function () { 
+        var str = $(this).attr("id");
+        // console.log("GRABBING ID ", str)
+        // console.log("GRABBING TEXT ", $(this).text());
         var int = parseInt(str);
-        console.log(str);
+        // console.log(str);
         var str = cityList[int];
-        console.log(str);
+        // console.log(str);
         $("#city-input").val(str);
-    });
+    })
 
     function updateList() {
         $("#cityBox").empty();
@@ -91,14 +106,14 @@ $(document).ready(function () {
     function getToday() {
         calendarDate = moment().format("dddd, MMMM Do, YYYY");
         todayDt = moment().format("DD");
-        console.log(todayDt + " This is today dt");
+        // console.log(todayDt + " This is today dt");
         var dashText = "Weather Dashboard";
         $("#dash").html(dashText);
     }
 
     function getForecast() {
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + APIKey;
-        console.log(city);
+        // console.log(city);
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -164,22 +179,22 @@ $(document).ready(function () {
     };
 
     function formatDate(str) {
-        console.log(str);
+        // console.log(str);
         var mn = str.slice(5, 7);
-        console.log(mn);
+        // console.log(mn);
         var dt = str.slice(8, 10);
-        console.log(dt);
+        // console.log(dt);
         var yr = str.slice(0, 4);
-        console.log(yr);
+        // console.log(yr);
         var newStr = mn + "/" + dt + "/" + yr;
         return newStr;
 
     }
     
     function getDate(str) {
-        console.log(str);
+        // console.log(str);
         var dt = str.slice(8, 10);
-        console.log(dt);
+        // console.log(dt);
         return dt;
     }
 
@@ -240,7 +255,7 @@ $(document).ready(function () {
                     url: queryURL,
                     method: "GET"
                 }).then(function (response) {
-                    console.log("UV: " + response.value);
+                    // console.log("UV: " + response.value);
                     var uv = response.value;
                     uvColor(uv);
                 });
