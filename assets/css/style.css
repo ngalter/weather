@@ -98,6 +98,14 @@ body {
        padding-bottom: .5em;
        box-shadow:  1px 1px 8px 3px #999999;
    }
+
+   @media only screen and (max-width: 980px) {
+    .topbar {
+      font-size: 1em;
+      font-weight: 400;
+    }
+  }
+
    button {
         border-radius: 5px;
         padding: .2em .5em;
