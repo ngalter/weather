@@ -2,8 +2,8 @@ $(document).ready(function () {
     console.log("ready!");
 
     var APIKey = "78eba90150637413f3c5739718713dea";
-    var calendarDate = moment().format("dddd, MMMM Do, YYYY");
-    $("#caldate").html(calendarDate);
+    var calendarDate = moment().format("dddd, MMMM Do, YYYY");;
+    $("#dash2").html(calendarDate);
     var todayDt = "";
     var latNo = "";
     var lonNo = "";
