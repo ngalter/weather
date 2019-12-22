@@ -1,7 +1,9 @@
 
 .select-box {
+    background-color:lightskyblue;
     width: 100%;
-    padding: 30px;
+    margin: auto;
+    padding: 10px;
     text-align: left;
     border-radius: 5px;
 }
@@ -17,10 +19,10 @@
     border: solid 1px #666666;
     margin-right: auto;
     margin-left: auto;
-    width: 90%;
+    width: 100%;
     border-radius: 5px; 
     padding: 20px;
-    background-color: white;
+    background-color: lightskyblue;
     border: solid 1px #dddddd;
 }
 .myDate {
@@ -34,8 +36,10 @@
 .five-day {
     color: white;
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin-bottom: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
     text-align: center;
     border-radius: 5px;
 }
@@ -43,6 +47,8 @@
 .fcastdate {
     margin-top: 5px;
     text-align: center;
+    font-size: .9em;
+    font-weight: 400;
 }
 
 .myClass:hover {
@@ -69,6 +75,7 @@
 
 body {
     margin-bottom: 5em;
+    background-color: whitesmoke;
 }
 
 .city-head {
@@ -78,15 +85,11 @@ body {
 
 }
 .top_space {
-    color: transparent;
     margin-top: 5em;
-}   
-
+}
   .topbar {
        text-align: center;
        text-shadow: 1px 1px #333333;
-       background-image: url("../img/weatherhead.jpg");
-       background-color: #ffffff;
        color: white;
        font-size: 1.7em;
        font-family: Arial, Helvetica, sans-serif;
