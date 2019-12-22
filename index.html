@@ -28,33 +28,38 @@
                            </div>
                         </div>
                 </div>    
-                <div class="row mb-4 d-flex justify-content-between" style="background-color: whitesmoke; border-radius: 3px; border: solid 1px gainsboro;">
-                        <div class="col-lg-4 select-box mt-4 select-box mb-4">
+                <div class="row mb-3 d-flex justify-content-center">
+                        <div class="col-lg-12 myDate">
+                                <h4 id="caldate"></h4> 
+                         </div>
+                </div>
+                <div class="row mb-3 d-flex justify-content-between" style="background-color: whitesmoke; border-radius: 3px; border: solid 1px gainsboro;">
+
+                        <div class="col-lg-3 select-box mt-4 select-box mb-4">
                               <h5>Search for a City:</h5>
-                              <form id="city-form">
-                                <input type="text" id="city-input" value="">
+                              <form id="city-form" class="myForm">
+                                <input type="text" id="city-input" class="myInput" value="">
                                 <button class="bg-primary text-white" id="search" ><i class="fas fa-search"></i>
                                 </button>
                                 <div class="row mt-2">
                                         <div class="col mt-2 mb-2" id="myBox">
                                                 <div id="cityBox">
-                                                        <p class="city-item">Philadelphia</p>
+                                                        <p class="city-item"></p>
                                                 </div>
                                         </div>
                                 </div>
+                                <button class="bg-danger text-white mt-1" id="clearBtn"><i class="fas fa-cut"></i>
+                                </button> 
                               </form>
                         </div>
-                        <div class="col-lg-8 mt-4 mb-4">
-                                <div class="row d-flex today-weather" id="today">
-                                        <div class="col-lg-1 justify-content-left">
+                        <div class="col-lg-8 today-weather justify-content-center mt-4 mb-4">
+                                <div class="row d-flex" id="today">
+                                        <div class="col-lg-1 justify-content-center">
                                                 <img id="today-iconid" style="clear:both;" class="todayIcon" ></img>        
                                         </div>
-                                        <div class="col-lg-5 city-head">
+                                        <div class="col-lg-6 city-head">
                                                 <h4 id="cityid"></h4> 
                                         </div>
-                                        <div class="col-lg-5 city-head">
-                                                        <h6 id="caldate"></h6> 
-                                                </div>
                                         <div class="col-lg-10">
                                                 <h6 id="tempid"></h6>
                                         </div>
@@ -71,13 +76,13 @@
                                                 <h4 id="uvid" class="badge"></h4>
                                         </div>
                                 </div>
-                                <div class="row d-flex mt-4 justify-content-left">
-                                        <h4>
-                                                5-Day Forcast:
-                                        </h4>
-                                </div> 
+                        <div class="row d-flex mt-4 forecast justify-content-left">
+                                <h4>
+                                        5-Day Forcast:
+                                </h4>
+                        </div> 
                                 <div class="row d-flex forecast justify-content-between"> 
-                                        <div class="col-s-2 bg-primary five-day">
+                                        <div class="col-md-2 bg-primary five-day">
                                                 <div class="col justify-content-center">
                                                         <h6 id="fcast1" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
@@ -91,7 +96,7 @@
                                                         <p id="h1" style="clear:both;"></p>
                                                 </div>  
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
+                                        <div class="col-md-2 bg-primary five-day">
                                                 <div class="col justify-content-center">
                                                       <h6 id="fcast2" style="clear:both;" class="fcastdate"></h6>
                                               </div>
@@ -105,7 +110,7 @@
                                                         <p id="h2" style="clear:both;"></p>
                                                 </div>      
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
+                                        <div class="col-md-2 bg-primary five-day">
                                                 <div class="col justify-content-center">
                                                         <h6 id="fcast3" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
@@ -119,7 +124,7 @@
                                                         <p id="h3" style="clear:both;"></p>
                                                 </div>                                                  
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
+                                        <div class="col-md-2 bg-primary five-day">
                                                  <div class="col justify-content-center">
                                                         <h6 id="fcast4" style="clear:both;" class="fcastdate"></h6>
                                                 </div>
@@ -133,7 +138,7 @@
                                                         <p id="h4" style="clear:both;"></p>
                                                 </div>         
                                         </div>
-                                        <div class="col-s-2 bg-primary five-day">
+                                        <div class="col-md-2 bg-primary five-day">
                                                 <div class="col justify-content-center">
                                                         <h6 id="fcast5" class="fcastdate" style="clear:both;"></h6>
                                                 </div>
@@ -148,6 +153,7 @@
                                                 </div>           
                                         </div>
                                 </div>
+                            </div>
                         </div>
                 </div>   
         <script

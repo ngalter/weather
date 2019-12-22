@@ -2,33 +2,41 @@ $(document).ready(function () {
     console.log("ready!");
 
     var APIKey = "78eba90150637413f3c5739718713dea";
-    var calendarDate = "";
+    var calendarDate = moment().format("dddd, MMMM Do, YYYY");
+    $("#caldate").html(calendarDate);
     var todayDt = "";
     var latNo = "";
     var lonNo = "";
     var city = $("#city-input").val().trim();
-    var cityList = ["Philadelphia"];
-    
+    var cityList = [];
 
+    getToday();
+    readData();
 
     $("#search").on("click", function (event) {
         event.preventDefault();
         city = $("#city-input").val().trim();
         var index = cityList.indexOf(city);
         console.log(`INDEX OF ${city} is ${index}`);
-            // $.inArray(city, cityList)
-        if (index === -1)
-        {
+        // $.inArray(city, cityList)
+        if (index === -1) {
             // console.log("in array") 
             cityList.push(city);
-        }else
-        {
-           // cityList.push(city);
+        } else {
+            // cityList.push(city);
             // console.log("in array") 
         }
             
         updateList();
         doGroup();
+    });
+
+    $("#clearBtn").on("click", function (event) {
+        event.preventDefault();
+        localStorage.clear();
+        cityList = [];
+        $("#cityBox").empty();
+
     });
 
     // $("#cityBox").on("click", function (event) {
@@ -41,7 +49,7 @@ $(document).ready(function () {
     //     // $("#city-input").val(str);
     // });
 
-    $(document).on("click", ".city-item", function () { 
+    $(document).on("click", ".city-item", function () {
         var str = $(this).attr("id");
         // console.log("GRABBING ID ", str)
         // console.log("GRABBING TEXT ", $(this).text());
@@ -54,47 +62,51 @@ $(document).ready(function () {
 
     function updateList() {
         $("#cityBox").empty();
-        for (var i = 0; i < cityList.length; i++)
-        {
+        for (var i = 0; i < cityList.length; i++) {
             var newItem = cityList[i];
-             var newP = $("<p>").text(newItem).addClass("city-item").attr("id", i.toString());
+            var newP = $("<p>").text(newItem).addClass("city-item").attr("id", i.toString());
             $("#cityBox").append(newP);
         }
+            saveData();
     }
 
 
+    function saveData() {
+        if (typeof (Storage) !== "undefined")
+        {
+            localStorage.clear();
+            for (var i = 0; i < cityList.length; i++) {
+                localStorage.setItem(i.toString(), cityList[i]);
+                console.log(i + " : " + cityList[i]);
+            }
 
-
-    /*function saveData() {
-        if (typeof (Storage) !== "undefined") {
-
-            $("<listbox>").each(function () {
-                localStorage.setItem(i, "<listbox>".val);
-                console.log("<listbox>".val);
-                //localStorage.setItem(i,value);
-        
-
-            } else {
+        }   
+        else
+        {
                     // Sorry! No Web Storage support..
-                });
+        }
+                
         };
         
-       function getData() {
-            if (typeof (Storage) !== "undefined") {
+    function readData()
+    {
+        if (typeof (Storage) !== "undefined")
+        {
                 // Code for localStorage/sessionStorage.
-                var userInput = "";
+                cityList = [];
             
-                for (var i = 0; i < 9; i++) {
-                    dateKey = today + indexHour(i);
-                    userInput = localStorage.getItem(dateKey);
-                    document.getElementById(indexHour(i)).value = userInput;
-                }
+            for (var i = 0; i<localStorage.length; i++)
+            {
+                console.log(localStorage.length);
+                var key = i.toString();
+                cityList[i] = localStorage.getItem(key);
+                console.log(cityList[i]);
+            }
             } else {
                 // Sorry! No Web Storage support..
-            }
-       }/*/
-
-
+        }
+        updateList();
+       }
 
     //doGroup();
     function doGroup() {
@@ -201,16 +213,14 @@ $(document).ready(function () {
     function uvColor(uv) {
         var numUV = uv * 1;
 
-        console.log("Color Function" + numUV);
         if (numUV >= 0 && numUV <= 2) {
             $(".badge").css("background-color", "green");
         }
         else if (numUV > 2 && numUV <= 5) {
-            $(".badge").css("background-color", "#e7e706");
+            $(".badge").css("background-color", "#ffcc33");
         }
         else if (numUV > 5 && numUV <= 7) {
-            $(".badge").css("background-color", "orange");
-            console.log("in if orange");
+            $(".badge").css("background-color", "#ff6633");
         }
         else if (numUV > 7 && numUV <= 10) {
             $(".badge").css("background-color", "red");
@@ -262,5 +272,4 @@ $(document).ready(function () {
             
         })
         };
-
-    });
+});
