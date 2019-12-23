@@ -25,8 +25,7 @@ $(document).ready(function () {
         } else {
             // cityList.push(city);
             // console.log("in array") 
-        }
-            
+        }          
         updateList();
         doGroup();
     });
@@ -196,9 +195,10 @@ $(document).ready(function () {
         // console.log(mn);
         var dt = str.slice(8, 10);
         // console.log(dt);
-        var yr = str.slice(0, 4);
+        //var yr = str.slice(0, 4);
         // console.log(yr);
-        var newStr = mn + "/" + dt + "/" + yr;
+        //var newStr = mn + "/" + dt + "/" + yr;
+        var newStr = mn + "/" + dt ;
         return newStr;
 
     }
@@ -284,6 +284,14 @@ $(document).ready(function () {
             {
                 $("#city-input").val(cityList[0]);
                 city = $("#city-input").val().trim();
+                doGroup();
+            }
+            else
+            {
+                city = "Philadelphia";
+                cityList.push(city);
+                $("#city-input").val(city);
+                updateList();
                 doGroup();
             }
             runYet = true;
