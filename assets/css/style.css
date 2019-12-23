@@ -110,10 +110,7 @@ body {
       font-weight: 400;
     }
     .todayIcon {
-        width: 40px;
-        height: 40px;
-        background-color: lightsteelblue;
-        margin-right: 20px;
+        background-color: transparent!important;
         border-radius: 5px;
     }
     .myBlock {
@@ -153,9 +150,10 @@ body {
    .todayIcon {
        width: 120px;
        height: 120px;
-       background-color: lightsteelblue;
-       margin-right: 20px;
+       margin-right: 0px;
+       margin-top: 0px;
        border-radius: 5px;
+       background-color: lightgrey;
    }
 
    .myImg {
