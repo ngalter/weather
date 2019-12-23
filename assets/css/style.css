@@ -149,8 +149,7 @@ body {
         background-color: purple;
     }
    .myBadge {
-        padding-top: .5em;
-        padding-bottom: .2em;
+        padding: .6em .2em .1em .2em;
         font-size: 1em;
         color: white;
         text-align: center;
