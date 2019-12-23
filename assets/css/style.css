@@ -15,15 +15,17 @@
 .myInput {
     width: 80%;
 }
+.myBlock {
+        margin-left: 40%;
+        margin-right: 40%;
+}
 .today-weather {
-    border: solid 1px #666666;
     margin-right: auto;
     margin-left: auto;
     width: 100%;
     border-radius: 5px; 
     padding: 20px;
     background-color: lightskyblue;
-    border: solid 1px #dddddd;
 }
 .myDate {
     text-align: center;
@@ -79,10 +81,13 @@ body {
 }
 
 .city-head {
-    margin-left: 10px;
-    margin-top: 10px;
-    padding-left: 5px;
-
+    text-align: center;
+}
+.city-name {
+    margin-top: -4em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 600;
 }
 .top_space {
     margin-top: 5em;
@@ -101,11 +106,18 @@ body {
 
    @media only screen and (max-width: 980px) {
     .topbar {
-      font-size: 1em;
+      font-size: 1.1em;
       font-weight: 400;
     }
+    .todayIcon {
+        width: 60px;
+        height: 60px;
+        background-color: lightsteelblue;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
   }
-
+ 
    button {
         border-radius: 5px;
         padding: .2em .5em;
@@ -125,28 +137,23 @@ body {
     .purple{
         background-color: purple;
     }
-   .badge {
-        float: left;
-        margin-top: -5px;
-        margin-left: -5px;
-        padding: .5em .75em;
-        font-size: .8em;
+   .myBadge {
+        padding-top: .5em;
+        padding-bottom: .2em;
+        font-size: 1em;
         color: white;
+        text-align: center;
         background-color: green;
+        border-radius: 20px;
    }
    .todayIcon {
-       width: 60px;
-       height: 60px;
+       width: 100px;
+       height: 100px;
        background-color: lightsteelblue;
        margin-right: 20px;
        border-radius: 5px;
    }
-   .fcastIcon {
-    width: 70px;
-    height: 70px;
-    margin-top: -10px;
-    margin-left: -10px;
-   }
+
    .myImg {
        width: 70px;
        height: 70px;

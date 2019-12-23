@@ -3,7 +3,8 @@ $(document).ready(function () {
 
     var APIKey = "78eba90150637413f3c5739718713dea";
     var calendarDate = moment().format("dddd, MMMM Do, YYYY");;
-    $("#dash2").html(calendarDate);
+    var dateStr = calendarDate;
+    $("#dash2").html(dateStr);
     var todayDt = "";
     var latNo = "";
     var lonNo = "";
@@ -214,22 +215,22 @@ $(document).ready(function () {
         var numUV = uv * 1;
 
         if (numUV >= 0 && numUV <= 2) {
-            $(".badge").css("background-color", "green");
+            $(".myBadge").css("background-color", "green");
         }
         else if (numUV > 2 && numUV <= 5) {
-            $(".badge").css("background-color", "#ffcc33");
+            $(".myBadge").css("background-color", "#ffcc33");
         }
         else if (numUV > 5 && numUV <= 7) {
-            $(".badge").css("background-color", "#ff6633");
+            $(".myBadge").css("background-color", "#ff6633");
         }
         else if (numUV > 7 && numUV <= 10) {
-            $(".badge").css("background-color", "red");
+            $(".myBadge").css("background-color", "red");
         }
         else if (numUV > 10) {
-            $(".badge").css("background-color", "purple");
+            $(".myBadge").css("background-color", "purple");
         }
         uv = numUV.toString();
-        $("#uvid").html(uv);
+        $("#uvid").html("UV Index: " + uv);
     }
     
     function getWeather() {

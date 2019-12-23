@@ -31,7 +31,7 @@
                            </div>
                         </div>
                 </div>    
-                <div class="row mb-3 d-flex justify-content-between" style="background-color: whitesmoke; border-radius: 3px; border: solid 1px gainsboro;">
+                <div class="row mb-3 d-flex justify-content-between" style="background-color: whitesmoke; border-radius: 3px;">
 
                         <div class="col-lg-3 select-box mt-4 select-box mb-4">
                               <h5>Search for a City:</h5>
@@ -52,33 +52,33 @@
                         </div>
                         <div class="col-lg-8 today-weather justify-content-center mt-4 mb-4">
                                 <div class="row d-flex" id="today">
-                                        <div class="col-lg-1 justify-content-center">
-                                                <img id="today-iconid" style="clear:both;" class="todayIcon" ></img>        
-                                        </div>
-                                        <div class="col-lg-6 city-head">
-                                                <h4 id="cityid"></h4> 
-                                        </div>
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-4 justify-content-center">
+                                                <img id="today-iconid" style="clear:both;" class="todayIcon" ></img> 
+                                        </div>       
+                                </div>
+                                <div class="col-lg-12 city-head">
+                                        <div class="myBlock city-name" id="cityid"></div>
+                                </div> 
+                                <div class="row d-flex">
+                                        <div class="col-lg-12 city-head">
                                                 <h6 id="tempid"></h6>
                                         </div>
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-12 city-head">
                                                 <h6 id="humidid"></h6>
                                         </div>
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 city-head">
                                                 <h6 id="windid"></h6>
                                         </div>
-                                        <div class="col-lg-2">
-                                                <h6>UV Index: </h6>
-                                        </div>
-                                        <div class="col-lg-1">
-                                                <h4 id="uvid" class="badge"></h4>
-                                        </div>
-                                </div>
-                        <div class="row d-flex mt-4 forecast justify-content-left">
-                                <h4>
-                                        5-Day Forcast:
-                                </h4>
-                        </div> 
+                                          
+                                                <div class="col-lg-12 city-head">
+                                                        <div class="myBlock myBadge"><h6 id="uvid"></h6></div>
+                                                </div>         
+                                </div>              
+                                <div class="row d-flex mt-4 forecast justify-content-left">
+                                        <h4>
+                                                5-Day Forcast:
+                                        </h4>
+                                </div> 
                                 <div class="row d-flex forecast justify-content-center"> 
                                         <div class="col-lg-2 bg-primary five-day">
                                                 <div class="col justify-content-center">
