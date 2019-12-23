@@ -10,9 +10,8 @@ $(document).ready(function () {
     var lonNo = "";
     var city = $("#city-input").val().trim();
     var cityList = [];
+    var runYet = false;
 
-    getToday();
-    readData();
 
     $("#search").on("click", function (event) {
         event.preventDefault();
@@ -272,5 +271,26 @@ $(document).ready(function () {
                 });
             
         })
-        };
+    };
+    
+    function firstRun()
+    {
+        console.log("firstRun" + runYet)
+        if (runYet === false)
+        {
+            getToday();
+            readData();
+            if (cityList.length > 0)
+            {
+                $("#city-input").val(cityList[0]);
+                city = $("#city-input").val().trim();
+                doGroup();
+            }
+            runYet = true;
+        }
+    }
+
+    firstRun();
+
+
 });
