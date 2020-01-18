@@ -1,5 +1,8 @@
 # weather
 
 Select a city
-get today's weather
-get your 5 day forecast
+Get today's weather
+Get your 5 day forecast
+
+Store your most recently selected cities
+or delete them.
