@@ -1,8 +1,7 @@
 # weather
 
-Select a city.
-Get today's weather.
-Get your 5 day forecast.
-
-Store your most recently selected cities, 
-or delete them.
+1. Select a city.
+2. Get today's weather information including icon, temperature, humidity and uv index.
+3. Get your 5 day forecast.
+4. Store your most recently selected cities, 
+5. Delete stored cities.
